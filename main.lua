@@ -52,8 +52,8 @@ local grid_start_x
 local grid_start_y
 
 local function gen_grid()
-	-- constrain mine_count to (width-1)*(height-1)
-	actual_mine_count = math.min(request_mine_count, (grid_height - 1)*(grid_width-1))
+	-- constrain mine_count to 1 and (width-1)*(height-1)
+	actual_mine_count = math.max(1, math.min(request_mine_count, (grid_height - 1)*(grid_width-1)))
 
 	-- clear grid
 	grid = {}
